@@ -65,7 +65,7 @@ if(ca_safe_get('ca_hidden') == 'Y') {
 	update_option('ca_track_html5', $ca_track_html5);	
 	if (!isset($_REQUEST['Clear'])){
 		?>  
-		<div class="updated"><p><strong><?php _e('Options saved.', 'ga-dash'); ?></strong></p></div>  
+		<div class="updated"><p><strong><?php _e('Options saved.', 'clicky-analytics'); ?></strong></p></div>  
 		<?php
 	}	
 }
@@ -146,7 +146,7 @@ if ( is_rtl() ) {
 		<p><input name="ca_track_youtube" type="checkbox" id="ca_track_youtube" value="1"<?php if (get_option('ca_track_youtube')) echo " checked='checked'"; ?>  /><?php _e(" track Youtube videos", 'clicky-analytics' ); ?></p>
 		<p><input name="ca_track_html5" type="checkbox" id="ca_track_html5" value="1"<?php if (get_option('ca_track_html5')) echo " checked='checked'"; ?>  /><?php _e(" track HTML5 videos", 'clicky-analytics' ); ?></p>
 		<p class="submit">  
-        <input type="submit" name="Submit" class="button button-primary" value="<?php _e('Update Options', 'clicky-analytics' ) ?>" />&nbsp;&nbsp;&nbsp;<input type="submit" name="Clear" class="button button-primary" value="<?php _e('Clear Cache', 'ga-dash' ) ?>" />
+        <input type="submit" name="Submit" class="button button-primary" value="<?php _e('Update Options', 'clicky-analytics' ) ?>" />&nbsp;&nbsp;&nbsp;<input type="submit" name="Clear" class="button button-primary" value="<?php _e('Clear Cache', 'clicky-analytics' ) ?>" />
         </p>  
     </form>  
 </div>
@@ -167,8 +167,9 @@ if ( is_rtl() ) {
 			<br /><h3><?php _e("Useful Plugins",'clicky-analytics') ?></h3>
 		</center>			
 		<ul>
-			<li><a href="http://wordpress.org/extend/plugins/google-analytics-dashboard-for-wp/" target="_blank"><?php _e("Google Analytics Dashboard",'clicky-analytics') ?></a></li>
-			<li><a href="http://wordpress.org/extend/plugins/google-adsense-dashboard-for-wp/" target="_blank"><?php _e("Google Adsense Dashboard",'clicky-analytics') ?></a></li>
+			<li><a href="http://www.deconf.com/en/projects/youtube-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("YouTube Analytics Dashboard",'clicky-analytics') ?></a></li>
+			<li><a href="http://www.deconf.com/en/projects/google-adsense-dashboard-for-wordpress/" target="_blank"><?php _e("Google Adsense Dashboard",'clicky-analytics') ?></a></li>
+			<li><a href="http://www.deconf.com/en/projects/google-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("Google Analytics Dashboard",'clicky-analytics') ?></a></li>						
 			<li><a href="http://wordpress.org/extend/plugins/follow-us-box/" target="_blank"><?php _e("Follow Us Box",'clicky-analytics') ?></a></li>			
 		</ul>			
 </div>

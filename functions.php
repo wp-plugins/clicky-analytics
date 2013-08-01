@@ -1,4 +1,17 @@
 <?php
+
+	function file_get_contents_clicky($url) {
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_URL, $url);
+
+		$data = curl_exec($ch);
+		curl_close($ch);
+
+		return $data;
+	}
 	
 	function ca_tracking_code(){
 		global $current_user;
@@ -124,7 +137,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 
 		}
-		return $ca_statsdata;
+		return rtrim($ca_statsdata,',');
 	}
 	
 // Get Top referrers
@@ -169,7 +182,8 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 
 		}
-		return $ca_statsdata;
+
+		return rtrim($ca_statsdata,',');		
 	}
 // Get Top searches
 	function ca_top_searches($api_url, $siteid, $sitekey, $from){
@@ -213,6 +227,6 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 
 		}
-		return $ca_statsdata;
+		return rtrim($ca_statsdata,',');
 	}
 ?>

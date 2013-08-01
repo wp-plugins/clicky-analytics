@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://www.deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Deconf.com
-Version: 1.1.1
+Version: 1.2
 Author URI: http://www.deconf.com
 */  
 
@@ -14,7 +14,7 @@ function ca_admin() {
 	
 function ca_admin_actions() {
 	if (current_user_can('manage_options')) {  
-		add_options_page(__("Clicky Analytics",'clicky-analytics'), __("Clicky Analytics",'clicky-analytics'), "manage_options", "ca_Dashboard", "ca_admin");
+		add_options_page(__("Clicky Analytics",'clicky-analytics'), __("Clicky Analytics",'clicky-analytics'), "manage_options", "Clicky_Analytics_Dashboard", "ca_admin");
 	}
 }  
 
@@ -44,6 +44,12 @@ function ca_setup() {
 	}
 }
 
+function ca_dash_settings_link($links) { 
+  $settings_link = '<a href="options-general.php?page=Clicky_Analytics_Dashboard">'.__("Settings",'ca-dash').'</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+
 function ca_tracking($head) {
 
 	$ca_traking=get_option('ca_tracking');
@@ -55,6 +61,7 @@ function ca_tracking($head) {
 	
 }
 
+$plugin = plugin_basename(__FILE__);
 add_filter('the_content', 'ca_front_content');  
 add_action('wp_dashboard_setup', 'ca_setup');
 add_action('admin_menu', 'ca_admin_actions'); 
@@ -62,6 +69,7 @@ add_action('admin_enqueue_scripts', 'ca_admin_enqueue_scripts');
 add_action('wp_enqueue_scripts', 'ca_enqueue_scripts');
 add_action('plugins_loaded', 'ca_init');
 add_action('wp_footer', 'ca_tracking');
+add_filter("plugin_action_links_$plugin", 'ca_dash_settings_link' );
 
 function ca_front_content($content) {
 	global $post;
@@ -103,7 +111,7 @@ function ca_front_content($content) {
 			if ( empty( $transient ) ){
 				$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&daily=1"."&filter=".urlencode($page_url)."&output=php";
 				//echo $url;
-				$result = unserialize(file_get_contents($url));
+				$result = unserialize(file_get_contents_clicky($url));
 				set_transient( $serial, $result, get_option('ca_cachetime') );
 				//echo "QR21-Refresh";
 			}else{
@@ -134,7 +142,9 @@ function ca_front_content($content) {
 			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 
 		}
-
+		
+		$ca_statsdata = rtrim($ca_statsdata,',');
+		
 		$code='<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 		  google.load("visualization", "1", {packages:["corechart"]});
@@ -178,7 +188,7 @@ function ca_front_content($content) {
 			if ( empty( $transient ) ){
 				$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&limit=30"."&href=".urlencode($page_url)."&output=php";
 				//echo $url;
-				$result = unserialize(file_get_contents($url));
+				$result = unserialize(file_get_contents_clicky($url));
 				set_transient( $serial, $result, get_option('ca_cachetime') );
 				//echo "QR21-Refresh";
 			}else{
@@ -214,6 +224,8 @@ function ca_front_content($content) {
 
 		}
 
+		$ca_organicdata = rtrim($ca_organicdata,',');		
+		
 		if ($ca_organicdata){
 			$code.='
 					google.load("visualization", "1", {packages:["table"]})
@@ -303,7 +315,7 @@ function ca_content() {
 		if ( empty( $transient ) ){
 			$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&daily=1"."&output=php";
 			//echo $url;
-			$result = unserialize(file_get_contents($url));
+			$result = unserialize(file_get_contents_clicky($url));
 			set_transient( $serial, $result, get_option('ca_cachetime') );
 			//echo "QR1-Refresh";
 		}else{
@@ -345,6 +357,8 @@ function ca_content() {
 
 	}
 
+	$chart1_data = rtrim($chart1_data,',');	
+	
 	$metrics = 'type=visitors,actions,visitors-online,traffic-sources,time-average,bounce-rate';
 	
 	try{
@@ -353,7 +367,7 @@ function ca_content() {
 		if ( empty( $transient ) ){
 			$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metrics."&output=php";
 			//echo $url;
-			$result = unserialize(file_get_contents($url));
+			$result = unserialize(file_get_contents_clicky($url));
 			set_transient( $serial, $result, get_option('ca_cachetime') );
 			//echo "QR2-Refresh";
 		}else{

@@ -2,8 +2,8 @@
 Contributors: deconf
 Tags: clicky, analytics, dashboard, tracking, tracking code, statistics, clicky analytics, clicky code
 Requires at least: 2.8
-Tested up to: 3.5.1
-Stable tag: 1.2
+Tested up to: 3.6
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,9 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
 
 == Changelog ==
+
+= 14.08.2013 - v1.2.1 =
+- fixed article view crash when no stats are available
 
 = 01.08.2013 - v1.2 =
 - switched to cURL, to increase compatibility with some webhostings

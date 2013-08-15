@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://www.deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Deconf.com
-Version: 1.2
+Version: 1.2.1
 Author URI: http://www.deconf.com
 */  
 
@@ -126,7 +126,7 @@ function ca_front_content($content) {
 		foreach( $result as $item ) {
 			foreach( $item as $date => $item1 ) {
 				if (!$item1) {
-					return;
+					return $content;
 				}			
 				$goores[$i][0]=$date;
 				foreach( $item1 as $item2) {
@@ -203,7 +203,7 @@ function ca_front_content($content) {
 		foreach( $result as $item ) {
 			foreach( $item as $date => $item1 ) {
 				if (!$item1) {
-					return;
+					return $content;
 				}
 				foreach( $item1 as $item2) {
 					$truesearch=str_replace(array('[secure search]'),'',$item2['title']);

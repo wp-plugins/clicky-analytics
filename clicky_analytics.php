@@ -120,7 +120,7 @@ function ca_front_content($content) {
 			}	
 		}  
 			catch(exception $e) {
-			return "<br />ERROR LOG:<br /><br />".$e; 
+			return $content; 
 		}
 		$i=0;
 		foreach( $result as $item ) {
@@ -197,7 +197,7 @@ function ca_front_content($content) {
 			}	
 		}  
 			catch(exception $e) {
-			return "<br />ERROR LOG:<br /><br />".$e; 
+			return $content; 
 		}
 		$i=0;
 		foreach( $result as $item ) {

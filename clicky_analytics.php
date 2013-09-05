@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://www.deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Deconf.com
-Version: 1.2.2
+Version: 1.3
 Author URI: http://www.deconf.com
 */  
 

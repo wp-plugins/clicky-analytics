@@ -13,14 +13,10 @@ if (isset($_REQUEST['Clear'])){
 if(ca_safe_get('ca_hidden') == 'Y') {  
 	//Form data sent  
 	$sitekey = ca_safe_get('ca_sitekey');  
-	if ($sitekey){
-		update_option('ca_sitekey', sanitize_text_field($sitekey));  
-	}
+	update_option('ca_sitekey', sanitize_text_field($sitekey));  
 	
 	$siteid = ca_safe_get('ca_siteid');
-	if ($siteid){		
-		update_option('ca_siteid', sanitize_text_field($siteid));  
-	}
+	update_option('ca_siteid', sanitize_text_field($siteid));  
 	
 	$dashaccess = ca_safe_get('ca_access');  
 	update_option('ca_access', $dashaccess);
@@ -168,7 +164,7 @@ if ( is_rtl() ) {
 		</center>			
 		<ul>
 			<li><a href="http://www.deconf.com/en/projects/youtube-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("YouTube Analytics Dashboard",'clicky-analytics') ?></a></li>
-			<li><a href="http://www.deconf.com/en/projects/google-adsense-dashboard-for-wordpress/" target="_blank"><?php _e("Google Adsense Dashboard",'clicky-analytics') ?></a></li>
+			<li><a href="http://www.deconf.com/en/projects/google-adsense-dashboard-for-wordpress/" target="_blank"><?php _e("Earnings Dashboard for Google Adsense™",'clicky-analytics') ?></a></li>
 			<li><a href="http://www.deconf.com/en/projects/google-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("Google Analytics Dashboard",'clicky-analytics') ?></a></li>						
 			<li><a href="http://wordpress.org/extend/plugins/follow-us-box/" target="_blank"><?php _e("Follow Us Box",'clicky-analytics') ?></a></li>			
 		</ul>			

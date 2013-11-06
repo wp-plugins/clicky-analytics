@@ -1,11 +1,11 @@
 <?php
 /* 
 Plugin Name: Clicky Analytics
-Plugin URI: http://www.deconf.com
+Plugin URI: http://deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
-Author: Deconf.com
-Version: 1.3
-Author URI: http://www.deconf.com
+Author: Alin Marcu
+Version: 1.3.1
+Author URI: http://deconf.com
 */  
 
 function ca_admin() {  
@@ -54,7 +54,7 @@ function ca_tracking($head) {
 
 	$ca_traking=get_option('ca_tracking');
 
-	if ($ca_traking){
+	if ($ca_traking<>2){
 		require_once 'functions.php';
 		echo ca_tracking_code();
 	}
@@ -270,7 +270,7 @@ function ca_content() {
 	
 	if ((!get_option('ca_siteid')) OR (!get_option('ca_sitekey'))){
 		
-		echo __("Site ID or Site Key are missing!<br /><br />For further help go to <a href='http://forum.deconf.com/en/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+		echo __("Site ID or Site Key are missing!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
 		ca_clear_cache();
 		return;
 		
@@ -333,7 +333,7 @@ function ca_content() {
 	$i=0;
 	
 	if (!is_array($result)){
-		echo __("<br />ERROR LOG: Check your Site ID and Site Key!<br /><br />For further help go to <a href='http://forum.deconf.com/en/wordpress-plugins-f182/'>DeConf Forum</a><br /><br />",'clicky-analytics');
+		echo __("<br />ERROR LOG: Check your Site ID and Site Key!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a><br /><br />",'clicky-analytics');
 		ca_clear_cache();
 		return;
 	}
@@ -341,7 +341,7 @@ function ca_content() {
 	foreach( $result as $item ) {
 		foreach( $item as $date => $item1 ) {
 			if (!$item1) {
-				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/en/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
 				ca_clear_cache();
 				return;
 			}
@@ -391,7 +391,7 @@ function ca_content() {
 	foreach( $result as $item ) {
 		foreach( $item as $date => $item1 ) {
 			if (!$item1) {
-				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/en/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
 				ca_clear_cache();				
 				return;
 			}		

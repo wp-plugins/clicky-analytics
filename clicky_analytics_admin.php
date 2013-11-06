@@ -102,7 +102,7 @@ if ( is_rtl() ) {
         <form name="ca_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 		<input type="hidden" name="ca_hidden" value="Y">
 		<?php echo "<h3>". __( 'Clicky Analytics API', 'clicky-analytics' )."</h3>"; ?>  
-        <?php echo "<i>".__("You should watch this", 'clicky-analytics')." <a href='http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/' target='_blank'>". __("Step by step video tutorial")."</a> ".__("to learn how to properly setup this plugin", 'clicky-analytics').".</i>";?>
+        <?php echo "<i>".__("You should watch this", 'clicky-analytics')." <a href='http://deconf.com/clicky-analytics-dashboard-wordpress/' target='_blank'>". __("Step by step video tutorial")."</a> ".__("to learn how to properly setup this plugin", 'clicky-analytics').". ".__("If you don't have a Clicky Account, you can", 'clicky-analytics')." <a href='http://clicky.com/66508224' target='_blank'>". __("create one here")."</a>.</i>";?>
 		<p><?php echo "<b>".__("Site ID:", 'clicky-analytics')." </b>"; ?><input type="text" name="ca_siteid" value="<?php echo $siteid; ?>" size="60"></p>  
 		<p><?php echo "<b>".__("Site Key:", 'clicky-analytics')." </b>"; ?><input type="text" name="ca_sitekey" value="<?php echo $sitekey; ?>" size="58"></p>  
 		</p>  
@@ -134,7 +134,7 @@ if ( is_rtl() ) {
 		<p><?php _e("Enable Tracking: ", 'clicky-analytics' ); ?>
 		<select id="ca_tracking" name="ca_tracking">
 			<option value="1" <?php if (($ca_tracking=="1") OR (!$ca_tracking)) echo "selected='yes'"; echo ">".__("Enabled", 'clicky-analytics');?></option>
-			<option value="0" <?php if ($ca_tracking=="0") echo "selected='yes'"; echo ">".__("Disabled", 'clicky-analytics');?></option>
+			<option value="2" <?php if ($ca_tracking=="2") echo "selected='yes'"; echo ">".__("Disabled", 'clicky-analytics');?></option>
 		</select></p>
 
 		<p><input name="ca_track_username" type="checkbox" id="ca_track_username" value="1"<?php if (get_option('ca_track_username')) echo " checked='checked'"; ?>  /><?php _e(" track usernames", 'clicky-analytics' ); ?></p>				
@@ -149,23 +149,23 @@ if ( is_rtl() ) {
 <div class="note" style="float:<?php echo $float_note; ?>;text-align:<?php echo $float_main; ?>;"> 
 		<center>
 			<h3><?php _e("Setup Tutorial",'clicky-analytics') ?></h3>
-			<a href="http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/" target="_blank"><img src="../wp-content/plugins/clicky-analytics/img/video-tutorial.png" width="95%" /></a>
+			<a href="http://deconf.com/clicky-analytics-dashboard-wordpress/" target="_blank"><img src="../wp-content/plugins/clicky-analytics/img/video-tutorial.png" width="95%" /></a>
 		</center>
 		<center>
 			<br /><h3><?php _e("Support Links",'clicky-analytics') ?></h3>
 		</center>			
 		<ul>
-			<li><a href="http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/" target="_blank"><?php _e("Clicky Analytics Plugin Official Page",'clicky-analytics') ?></a></li>
+			<li><a href="http://deconf.com/clicky-analytics-dashboard-wordpress/" target="_blank"><?php _e("Clicky Analytics Plugin Official Page",'clicky-analytics') ?></a></li>
 			<li><a href="http://wordpress.org/support/plugin/clicky-analytics" target="_blank"><?php _e("Clicky Analytics Plugin Wordpress Support",'clicky-analytics') ?></a></li>
-			<li><a href="http://forum.deconf.com/en/wordpress-plugins-f182/" target="_blank"><?php _e("Clicky Analytics Plugin on Deconf Forum",'clicky-analytics') ?></a></li>			
+			<li><a href="http://forum.deconf.com/wordpress-plugins-f182/" target="_blank"><?php _e("Clicky Analytics Plugin on Deconf Forum",'clicky-analytics') ?></a></li>			
 		</ul>
 		<center>
 			<br /><h3><?php _e("Useful Plugins",'clicky-analytics') ?></h3>
 		</center>			
 		<ul>
-			<li><a href="http://www.deconf.com/en/projects/youtube-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("YouTube Analytics Dashboard",'clicky-analytics') ?></a></li>
-			<li><a href="http://www.deconf.com/en/projects/google-adsense-dashboard-for-wordpress/" target="_blank"><?php _e("Earnings Dashboard for Google Adsense™",'clicky-analytics') ?></a></li>
-			<li><a href="http://www.deconf.com/en/projects/google-analytics-dashboard-for-wordpress/" target="_blank"><?php _e("Google Analytics Dashboard",'clicky-analytics') ?></a></li>						
+			<li><a href="http://deconf.com/youtube-analytics-dashboard-wordpress/" target="_blank"><?php _e("YouTube Analytics Dashboard",'clicky-analytics') ?></a></li>
+			<li><a href="http://deconf.com/earnings-dashboard-google-adsense-wordpress/" target="_blank"><?php _e("Earnings Dashboard for Google Adsense™",'clicky-analytics') ?></a></li>
+			<li><a href="http://deconf.com/google-analytics-dashboard-wordpress/" target="_blank"><?php _e("Google Analytics Dashboard",'clicky-analytics') ?></a></li>						
 			<li><a href="http://wordpress.org/extend/plugins/follow-us-box/" target="_blank"><?php _e("Follow Us Box",'clicky-analytics') ?></a></li>			
 		</ul>			
 </div>

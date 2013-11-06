@@ -2,8 +2,8 @@
 Contributors: deconf
 Tags: clicky, analytics, dashboard, tracking, tracking code, statistics, clicky analytics, clicky code
 Requires at least: 2.8
-Tested up to: 3.6
-Stable tag: 1.3
+Tested up to: 3.7.1
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,9 +38,9 @@ Some features like video analytics and custom data tracking will require a <a hr
  
 Related Links:
 
-* <a href="http://forum.deconf.com/en/wordpress-plugins-f182/" target="_blank">Support and Clicky Analytics Dashboard translations</a>
+* <a href="http://forum.deconf.com/wordpress-plugins-f182/" target="_blank">Support and Clicky Analytics Dashboard translations</a>
 
-* <a href="http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/" title="Clicky Analytics Plugin"  target="_blank">Clicky Analytics Plugin Homepage</a>
+* <a href="http://deconf.com/clicky-analytics-dashboard-wordpress/" title="Clicky Analytics Plugin"  target="_blank">Clicky Analytics Plugin Homepage</a>
 
 == Installation ==
 
@@ -49,13 +49,13 @@ Related Links:
 3. Open the plugin configuration page, which is located under Settings -> Clicky Analytics and enter your Site Key and Site ID
 4. Save your configuration
 
-A step by step tutorial is available here: [Clicky Analytics video tutorial](http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/)
+A step by step tutorial is available here: [Clicky Analytics video tutorial](http://deconf.com/clicky-analytics-dashboard-wordpress/)
 
 == Frequently Asked Questions == 
 
 = Where can I find my Clicky Site Key and Site ID? =
 
-Follow this step by step video tutorial: [Clicky Analytics](http://www.deconf.com/en/projects/clicky-analytics-plugin-for-wordpress/)
+Follow this step by step video tutorial: [Clicky Analytics](http://deconf.com/clicky-analytics-dashboard-wordpress/)
 
 = Some settings are missing from your video tutorial ... =
 
@@ -63,7 +63,7 @@ We are constantly improving our plugin, sometimes the video tutorial may be a li
 
 = More Questions? =
 
-A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins Support](http://forum.deconf.com/en/wordpress-plugins-f182/)
+A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins Support](http://forum.deconf.com/wordpress-plugins-f182/)
 
 == Screenshots ==
 
@@ -77,6 +77,9 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
 
 == Changelog ==
+
+= 06.11.2013 - v1.3.1 =
+- minor fixes and updates
 
 = 05.09.2013 - v1.3 =
 - added additional error messages

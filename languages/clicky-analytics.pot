@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Clicky Analytics\n"
-"POT-Creation-Date: 2013-09-05 10:38+0200\n"
-"PO-Revision-Date: 2013-09-05 10:39+0200\n"
+"POT-Creation-Date: 2013-11-06 16:26+0200\n"
+"PO-Revision-Date: 2013-11-06 16:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: Deconf <admin@deconf.com>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 #: .././clicky_analytics.php:273
 msgid ""
 "Site ID or Site Key are missing!<br /><br />For further help go to <a "
-"href='http://forum.deconf.com/en/wordpress-plugins-f182/'>DeConf Forum</a>"
+"href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>"
 msgstr ""
 
 #: .././clicky_analytics.php:295 .././clicky_analytics.php:557
@@ -65,8 +65,8 @@ msgstr ""
 #: .././clicky_analytics.php:336
 msgid ""
 "<br />ERROR LOG: Check your Site ID and Site Key!<br /><br />For further "
-"help go to <a href='http://forum.deconf.com/en/wordpress-plugins-"
-"f182/'>DeConf Forum</a><br /><br />"
+"help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf "
+"Forum</a><br /><br />"
 msgstr ""
 
 #: .././clicky_analytics.php:344 .././clicky_analytics.php:394
@@ -74,8 +74,8 @@ msgid ""
 "<br />ERROR LOG: If this is a new account, make sure that your Site ID and "
 "Site Key are correct and that Trcking is Enabled.<br /><br />After enough "
 "data is collected, the graphs will start showing up!<br /><br />For further "
-"help go to <a href='http://forum.deconf.com/en/wordpress-plugins-"
-"f182/'>DeConf Forum</a>"
+"help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf "
+"Forum</a>"
 msgstr ""
 
 #: .././clicky_analytics.php:459

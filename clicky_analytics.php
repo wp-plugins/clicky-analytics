@@ -615,7 +615,7 @@ function ca_content() {
 			};
 		});
    };
-   setInterval(online_refresh, 10000);
+   setInterval(online_refresh, 60000);
    </script>';
 
 	$code.='</center>';

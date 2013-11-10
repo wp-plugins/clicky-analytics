@@ -123,7 +123,6 @@ if ( is_rtl() ) {
 		<?php echo "<h3>" . __( 'Cache Settings', 'clicky-analytics' ). "</h3>";?>
 		<p><?php _e("Cache Time: ", 'clicky-analytics' ); ?>
 		<select id="ca_cachetime" name="ca_cachetime">
-			<option value="10" <?php if ($ca_cachetime=="10") echo "selected='yes'"; echo ">".__("None", 'clicky-analytics');?></option>
 			<option value="900" <?php if ($ca_cachetime=="900") echo "selected='yes'"; echo ">".__("15 minutes", 'clicky-analytics');?></option>
 			<option value="1800" <?php if (($ca_cachetime=="1800") OR (!$ca_cachetime)) echo "selected='yes'"; echo ">".__("30 minutes", 'clicky-analytics');?></option>
 			<option value="3600" <?php if ($ca_cachetime=="3600") echo "selected='yes'"; echo ">".__("1 hour", 'clicky-analytics');?></option>

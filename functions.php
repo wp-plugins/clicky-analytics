@@ -118,17 +118,19 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 		}
 		$i=0;
 		foreach( $result as $item ) {
-			foreach( $item as $date => $item1 ) {
-				if (!$item1) {
-					return;
-				}			
-				foreach( $item1 as $item2) {
-					$goores[$i][0]=ca_validation($item2['title']);
-					$goores[$i][1]=ca_validation($item2['value']);
-					$i++;
-						
-				}	
-			}
+			if ($item!="Invalid sitekey."){
+				foreach( $item as $date => $item1 ) {
+					if (!$item1) {
+						return;
+					}			
+					foreach( $item1 as $item2) {
+						$goores[$i][0]=ca_validation($item2['title']);
+						$goores[$i][1]=ca_validation($item2['value']);
+						$i++;
+							
+					}	
+				}
+			}	
 		}
 		$j=0;
 		$ca_statsdata="";
@@ -163,17 +165,19 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 		}
 		$i=0;
 		foreach( $result as $item ) {
-			foreach( $item as $date => $item1 ) {
-				if (!$item1) {
-					return;
-				}			
-				foreach( $item1 as $item2) {
-					$goores[$i][0]=ca_validation($item2['title']);
-					$goores[$i][1]=ca_validation($item2['value']);
-					$i++;
-						
-				}	
-			}
+			if ($item!="Invalid sitekey."){
+				foreach( $item as $date => $item1 ) {
+					if (!$item1) {
+						return;
+					}			
+					foreach( $item1 as $item2) {
+						$goores[$i][0]=ca_validation($item2['title']);
+						$goores[$i][1]=ca_validation($item2['value']);
+						$i++;
+							
+					}	
+				}
+			}	
 		}
 		$j=0;
 		$ca_statsdata="";
@@ -208,24 +212,26 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 		}
 		$i=0;
 		foreach( $result as $item ) {
-			foreach( $item as $date => $item1 ) {
-				if (!$item1) {
-					return;
-				}			
-				foreach( $item1 as $item2) {
-					$goores[$i][0]=ca_validation($item2['title']);
-					$goores[$i][1]=ca_validation($item2['value']);
-					$i++;
-						
-				}	
-			}
+			if ($item!="Invalid sitekey."){
+				foreach( $item as $date => $item1 ) {
+					if (!$item1) {
+						return;
+					}			
+					foreach( $item1 as $item2) {
+						$goores[$i][0]=ca_validation($item2['title']);
+						$goores[$i][1]=ca_validation($item2['value']);
+						$i++;
+							
+					}	
+				}
+			}	
 		}
 		$j=0;
 		$ca_statsdata="";
 		for ($j=0;$j<=$i-1;$j++){
-		
-			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
-
+			if (isset($goores[$j][1])){	
+				$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
+			}
 		}
 		return rtrim($ca_statsdata,',');
 	}

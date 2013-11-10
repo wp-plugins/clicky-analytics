@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Alin Marcu
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://deconf.com
 */  
 
@@ -37,7 +37,7 @@ function ca_setup() {
 	if (current_user_can(get_option('ca_access'))) {
 		wp_add_dashboard_widget(
 			'clicky-analytics-widget',
-			__("Clicky Analytics",'clicky-analytics'),
+			"<a href='http://deconf.com/clicky-analytics-dashboard-wordpress/' style='font-size:1em;text-decoration:none;'; target='_blank'>".__("Clicky Analytics Dashboard",'clicky-analytics')."</a>",
 			'ca_content',
 			$control_callback = null
 		);
@@ -98,6 +98,9 @@ function ca_front_content($content) {
 		#ca_sdata{
 			line-height:10px;
 		}
+		#ca_div, #ca_sdata{
+			clear:both;
+		}		
 		</style>';
 		
 		$page_url = $_SERVER["REQUEST_URI"];
@@ -123,24 +126,29 @@ function ca_front_content($content) {
 			return $content; 
 		}
 		$i=0;
+
 		foreach( $result as $item ) {
-			foreach( $item as $date => $item1 ) {
-				if (!$item1) {
-					return $content;
-				}			
-				$goores[$i][0]=$date;
-				foreach( $item1 as $item2) {
-					$goores[$i][1]=$item2['value'];
-				}	
-				$i++;
-			}
+			if (is_array($item)){
+				foreach( $item as $date => $item1 ) {
+					$goores[$i][0]=$date;
+					if (isset($item1)){
+						foreach( $item1 as $item2) {
+							$goores[$i][1]=$item2['value'];
+						}
+					}	
+					$i++;
+				}
+			} else {
+				$content .= "<p>Clicky Analytics Error: ".$item." ".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+				return $content; 
+			}			
 		}
 		$j=0;
 		$ca_statsdata="";
 		for ($j=$i-1;$j>=0;$j--){
-		
-			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
-
+			if (isset($goores[$j][1])){		
+				$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
+			}
 		}
 		
 		$ca_statsdata = rtrim($ca_statsdata,',');
@@ -201,18 +209,23 @@ function ca_front_content($content) {
 		}
 		$i=0;
 		foreach( $result as $item ) {
-			foreach( $item as $date => $item1 ) {
-				if (!$item1) {
-					return $content;
-				}
-				foreach( $item1 as $item2) {
-					$truesearch=str_replace(array('[secure search]'),'',$item2['title']);
-					if ($truesearch){	
-						$goores[$i][0]=ca_validation($item2['title']);
-						$goores[$i][1]=ca_validation($item2['value']);
-						$i++;
+			if (is_array($item)){
+				foreach( $item as $date => $item1 ) {
+					if (!$item1) {
+						return $content;
+					}
+					foreach( $item1 as $item2) {
+						$truesearch=str_replace(array('[secure search]'),'',$item2['title']);
+						if ($truesearch){	
+							$goores[$i][0]=ca_validation($item2['title']);
+							$goores[$i][1]=ca_validation($item2['value']);
+							$i++;
+						}	
 					}	
-				}	
+				}
+			} else {
+				echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+				return; 
 			}
 		}
 		
@@ -270,7 +283,7 @@ function ca_content() {
 	
 	if ((!get_option('ca_siteid')) OR (!get_option('ca_sitekey'))){
 		
-		echo __("Site ID or Site Key are missing!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+		echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
 		ca_clear_cache();
 		return;
 		
@@ -339,21 +352,27 @@ function ca_content() {
 	}
 	
 	foreach( $result as $item ) {
-		foreach( $item as $date => $item1 ) {
-			if (!$item1) {
-				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
-				ca_clear_cache();
-				return;
+		if (is_array($item)){
+			foreach( $item as $date => $item1 ) {
+				if (!$item1) {
+					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+					ca_clear_cache();
+					return;
+				}
+				$goores[$i][0]=$date;
+				foreach( $item1 as $item2) {
+					if (isset($item2['title']) AND $item2['title']=="Searches")
+						$goores[$i][1]=$item2['value'];
+					else if (!isset($item2['title']))
+						$goores[$i][1]=$item2['value'];	
+				}	
+				$i++;
 			}
-			$goores[$i][0]=$date;
-			foreach( $item1 as $item2) {
-				if (isset($item2['title']) AND $item2['title']=="Searches")
-					$goores[$i][1]=$item2['value'];
-				else if (!isset($item2['title']))
-					$goores[$i][1]=$item2['value'];	
-			}	
-			$i++;
-		}
+		} else {
+			echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+			ca_clear_cache();
+			return; 
+		}		
 	}
 	$j=0;
 	$chart1_data="";
@@ -389,21 +408,26 @@ function ca_content() {
 
 	$i=0;
 	foreach( $result as $item ) {
-		foreach( $item as $date => $item1 ) {
-			if (!$item1) {
-				echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
-				ca_clear_cache();				
-				return;
-			}		
-			$goores[$i][0]=$date;
-			foreach( $item1 as $item2) {
-				if (isset($item2['title']) AND $item2['title']=="Searches")
-					$goores[$i][1]=$item2['value'];
-				else if (!isset($item2['title']))
-					$goores[$i][1]=$item2['value'];				
-			}	
-			$i++;
-		}
+		if (is_array($item)){
+			foreach( $item as $date => $item1 ) {
+				if (!$item1) {
+					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+					ca_clear_cache();				
+					return;
+				}		
+				$goores[$i][0]=$date;
+				foreach( $item1 as $item2) {
+					if (isset($item2['title']) AND $item2['title']=="Searches")
+						$goores[$i][1]=$item2['value'];
+					else if (!isset($item2['title']))
+						$goores[$i][1]=$item2['value'];				
+				}	
+				$i++;
+			}
+		}else {
+			echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+			return; 
+		}	
 	}
 
     $code='<script type="text/javascript" src="https://www.google.com/jsapi"></script>

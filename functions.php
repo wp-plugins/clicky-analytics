@@ -25,29 +25,26 @@
 			if ((get_option('ca_track_username')) AND ((get_option('ca_track_email')))){
 		
 			$custom_tracking="<script type=\"text/javascript\">
-  var clicky_custom = {};
-  clicky_custom.session = {
-    username: '".$current_user->user_login."',
-    email: '". $current_user->user_email."'
-  };
+  var clicky_custom = clicky_custom || {};
+  clicky_custom.visitor = clicky_custom.visitor || {};
+  clicky_custom.visitor [\"username\"] = '".$current_user->user_login."';
+  clicky_custom.visitor [\"email\"] = '".$current_user->user_email."';
 </script>";
 
 			}
 			else if (get_option('ca_track_username')){
 		
 			$custom_tracking="<script type=\"text/javascript\">
-  var clicky_custom = {};
-  clicky_custom.session = {
-    username: '".$current_user->user_login."'
-  };
+  var clicky_custom = clicky_custom || {};
+  clicky_custom.visitor = clicky_custom.visitor || {};
+  clicky_custom.visitor [\"username\"] = '".$current_user->user_login."';
 </script>";
 			}
 			else if (get_option('ca_track_email')){
 			$custom_tracking="<script type=\"text/javascript\">
-  var clicky_custom = {};
-  clicky_custom.session = {
-    email: '". $current_user->user_email."'
-  };
+  var clicky_custom = clicky_custom || {};
+  clicky_custom.visitor = clicky_custom.visitor || {};
+  clicky_custom.visitor [\"email\"] = '".$current_user->user_email."';
 </script>";
 			}
 		}

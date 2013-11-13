@@ -1,5 +1,6 @@
 === Clicky Analytics ===
 Contributors: deconf
+Donate link: http://deconf.com/donate/
 Tags: clicky, analytics, dashboard, tracking, tracking code, statistics, clicky analytics, clicky code
 Requires at least: 2.8
 Tested up to: 3.7.1

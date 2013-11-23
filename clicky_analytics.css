@@ -10,7 +10,7 @@
 	box-shadow:inset 0px 1px 0px 0px #F4935A;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EA3E00), color-stop(1, #EF925F) );
 	background:-moz-linear-gradient( center top, #EA3E00 5%, #EF925F 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EA3E00\', endColorstr=\'#EF925F\');
+	/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EA3E00\', endColorstr=\'#EF925F\');*/
 	background-color:#EA3E00;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
@@ -28,7 +28,7 @@
 .clickybutton:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EF925F), color-stop(1, #EA3E00) );
 	background:-moz-linear-gradient( center top, #EF925F 5%, #EA3E00 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EF925F\', endColorstr=\'#EA3E00\');
+	/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EF925F\', endColorstr=\'#EA3E00\');*/
 	background-color:#EF925F;
 }
 .clickybutton:active {
@@ -60,7 +60,7 @@ table.clickytable {
 	box-shadow:inset 0px 1px 0px 0px #F4935A;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EA3E00), color-stop(1, #EF925F) );
 	background:-moz-linear-gradient( center top, #EA3E00 5%, #EF925F 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EA3E00\', endColorstr=\'#EF925F\');
+	/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=\'#EA3E00\', endColorstr=\'#EF925F\');*/
 	background-color:#EA3E00;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;

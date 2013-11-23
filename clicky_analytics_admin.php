@@ -105,7 +105,6 @@ if ( is_rtl() ) {
         <?php echo "<i>".__("You should watch this", 'clicky-analytics')." <a href='http://deconf.com/clicky-analytics-dashboard-wordpress/' target='_blank'>". __("Step by step video tutorial")."</a> ".__("to learn how to properly setup this plugin", 'clicky-analytics').". ".__("If you don't have a Clicky Account, you can", 'clicky-analytics')." <a href='http://clicky.com/66508224' target='_blank'>". __("create one here")."</a>.</i>";?>
 		<p><?php echo "<b>".__("Site ID:", 'clicky-analytics')." </b>"; ?><input type="text" name="ca_siteid" value="<?php echo $siteid; ?>" size="60"></p>  
 		<p><?php echo "<b>".__("Site Key:", 'clicky-analytics')." </b>"; ?><input type="text" name="ca_sitekey" value="<?php echo $sitekey; ?>" size="58"></p>  
-		</p>  
 		<?php echo "<h3>" . __( 'Access Level', 'clicky-analytics' ). "</h3>";?>
 		<p><?php _e("View Access Level: ", 'clicky-analytics' ); ?>
 		<select id="ca_access" name="ca_access">

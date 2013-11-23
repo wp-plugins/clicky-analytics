@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Alin Marcu
-Version: 1.3.3
+Version: 1.3.4
 Author URI: http://deconf.com
 */  
 
@@ -57,7 +57,7 @@ function ca_tracking($head) {
 	if ($ca_traking<>2){
 		require_once 'functions.php';
 		global $current_user;
-		do_action('clicky_analytics_before_tracking', $current_user);
+		do_action('clicky_analytics_before_tracking', $current_user); //DO NOT REMOVE THIS HOOK
 		echo ca_tracking_code();
 	}
 	
@@ -141,7 +141,6 @@ function ca_front_content($content) {
 					$i++;
 				}
 			} else {
-				$content .= "<p>Clicky Analytics Error: ".$item." ".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
 				return $content; 
 			}			
 		}
@@ -226,8 +225,7 @@ function ca_front_content($content) {
 					}	
 				}
 			} else {
-				echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
-				return; 
+				return $content; 
 			}
 		}
 		

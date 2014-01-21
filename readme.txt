@@ -1,7 +1,7 @@
 === Clicky Analytics ===
 Contributors: deconf
 Donate link: http://deconf.com/donate/
-Tags: clicky, analytics, dashboard, tracking, tracking code, statistics, clicky analytics, clicky code
+Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
 Tested up to: 3.7.1
 Stable tag: 1.3.4
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This plugin will display Clicky Web Analytics data and statistics inside your WordPress Blog.
 
 == Description ==
-Using a widget, Clicky Analytics Plugin displays detailed info and statistics about: online users, number of visits, number of actions, bounce rates, organic searches, time average directly on your Admin Dashboard.
+Using a widget, [Clicky Analytics Plugin](http://deconf.com/clicky-analytics-dashboard-wordpress/) displays detailed info and statistics about: online users, number of visits, number of actions, bounce rates, organic searches, time average directly on your Admin Dashboard.
 
 This plugin automatically inserts <a href="http://clicky.com/66508224" target="_blank">Clicky Web Analytics</a> tracking code in each page of your website.
 
@@ -37,11 +37,11 @@ Tracking features:
 
 Some features like video analytics and custom data tracking will require a <a href="http://clicky.com/66508224" target="_blank">Clicky Analytics Pro</a> account.
  
-Related Links:
+More Reading:
 
-* <a href="http://forum.deconf.com/wordpress-plugins-f182/" target="_blank">Support and Clicky Analytics Dashboard translations</a>
-
-* <a href="http://deconf.com/clicky-analytics-dashboard-wordpress/" title="Clicky Analytics Plugin"  target="_blank">Clicky Analytics Plugin Homepage</a>
+* [Clicky Analytics Plugin](http://deconf.com/clicky-analytics-dashboard-wordpress/) homepage
+* Other [WordPress Plugins](http://deconf.com/wordpress/) by same author
+* [Clicky Analytics Plugin](http://forum.deconf.com/wordpress-plugins-f182/) translations and support
 
 == Installation ==
 

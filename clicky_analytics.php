@@ -4,7 +4,7 @@ Plugin Name: Clicky Analytics
 Plugin URI: http://deconf.com
 Description: This plugin will display Clicky Analytics data and statistics into Admin Dashboard. 
 Author: Alin Marcu
-Version: 1.3.4
+Version: 1.3.5
 Author URI: http://deconf.com
 */  
 
@@ -179,7 +179,7 @@ function ca_front_content($content) {
 			  colors:['darkorange','#004411'],		  
 			  pointSize: 3,
 			  title: 'Visitors',
-			  chartArea: {width: '80%', height: '50%'},
+			  chartArea: {width: '90%', height: '50%'},
 			  hAxis: { title: '".__("Date", 'clicky-analytics')."',  titleTextStyle: {color: 'black'}, showTextEvery: 5}
 			};
 
@@ -253,7 +253,7 @@ function ca_front_content($content) {
 					var options = {
 						page: 'enable',
 						pageSize: 6,
-						width: '100%',
+						width: '99%',
 					};        
 					
 					var chart = new google.visualization.Table(document.getElementById('ca_sdata'));
@@ -263,7 +263,7 @@ function ca_front_content($content) {
 		}
 		$code.="</script>";		
 		
-		$content .= $code . '<div id="ca_div"></div><div id="ca_sdata" ></div>';
+		$content .= $code . '<div id="ca_div"></div><div id="ca_sdata" ></div><br />';
 
 	}
 	return $content;
@@ -283,7 +283,7 @@ function ca_content() {
 	
 	if ((!get_option('ca_siteid')) OR (!get_option('ca_sitekey'))){
 		
-		echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+		echo $item."<p>".__("For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a>",'clicky-analytics')."</p>";
 		ca_clear_cache();
 		return;
 		
@@ -346,7 +346,7 @@ function ca_content() {
 	$i=0;
 	
 	if (!is_array($result)){
-		echo __("<br />ERROR LOG: Check your Site ID and Site Key!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a><br /><br />",'clicky-analytics');
+		echo __("<br />ERROR LOG: Check your Site ID and Site Key!<br /><br />For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a><br /><br />",'clicky-analytics');
 		ca_clear_cache();
 		return;
 	}
@@ -355,7 +355,7 @@ function ca_content() {
 		if (is_array($item)){
 			foreach( $item as $date => $item1 ) {
 				if (!$item1) {
-					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a>",'clicky-analytics');
 					ca_clear_cache();
 					return;
 				}
@@ -369,7 +369,7 @@ function ca_content() {
 				$i++;
 			}
 		} else {
-			echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+			echo $item."<p>".__("For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a>",'clicky-analytics')."</p>";
 			ca_clear_cache();
 			return; 
 		}		
@@ -411,7 +411,7 @@ function ca_content() {
 		if (is_array($item)){
 			foreach( $item as $date => $item1 ) {
 				if (!$item1) {
-					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics');
+					echo __("<br />ERROR LOG: If this is a new account, make sure that your Site ID and Site Key are correct and that Trcking is Enabled.<br /><br />After enough data is collected, the graphs will start showing up!<br /><br />For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a>",'clicky-analytics');
 					ca_clear_cache();				
 					return;
 				}		
@@ -425,7 +425,7 @@ function ca_content() {
 				$i++;
 			}
 		}else {
-			echo $item."<p>".__("For further help go to <a href='http://forum.deconf.com/wordpress-plugins-f182/'>DeConf Forum</a>",'clicky-analytics')."</p>";
+			echo $item."<p>".__("For further help go to <a href='http://deconf.com/ask/'>DeConf Help Center</a>",'clicky-analytics')."</p>";
 			return; 
 		}	
 	}

@@ -3,8 +3,8 @@ Contributors: deconf
 Donate link: http://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
-Tested up to: 3.7.1
-Stable tag: 1.3.4
+Tested up to: 3.8.1
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Dashboard features:
 - access level settings
 - option to display top 30 pages, referrers and searches (sortable by columns)
 - option to display Clicky Analytics statistics on frontend, at the end of each article
-- has multilingual support, a POT file is available for translations. If you have a complete translation, send me the translation file or upload it to our forum and will be included in next release.
+- has multilingual support, a POT file is available for translations.
 
 Tracking features:
 
@@ -41,7 +41,7 @@ More Reading:
 
 * [Clicky Analytics Plugin](http://deconf.com/clicky-analytics-dashboard-wordpress/) homepage
 * Other [WordPress Plugins](http://deconf.com/wordpress/) by same author
-* [Clicky Analytics Plugin](http://forum.deconf.com/wordpress-plugins-f182/) translations and support
+* [Clicky Analytics Plugin](http://deconf.com/ask/) translations and support
 
 == Installation ==
 
@@ -64,7 +64,7 @@ We are constantly improving our plugin, sometimes the video tutorial may be a li
 
 = More Questions? =
 
-A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins Support](http://forum.deconf.com/wordpress-plugins-f182/)
+A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins Support](http://deconf.com/ask/)
 
 == Screenshots ==
 
@@ -78,6 +78,9 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
 
 == Changelog ==
+
+= 04.02.2014 - v1.3.5 =
+- all clicky analytics requests are now made using cURL 
 
 = 23.11.2013 - v1.3.4 =
 - hidding error messages on frontend 

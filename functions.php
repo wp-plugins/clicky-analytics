@@ -102,7 +102,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			if ( empty( $transient ) ){
 				$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&limit=30&output=php";
 				//echo $url;
-				$result = unserialize(file_get_contents($url));
+				$result = unserialize(file_get_contents_clicky($url));
 				set_transient( $serial, $result, get_option('ca_cachetime') );
 				//echo "QR3-Refresh";
 			}else{
@@ -149,7 +149,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			if ( empty( $transient ) ){
 				$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&limit=30&output=php";
 				//echo $url;
-				$result = unserialize(file_get_contents($url));
+				$result = unserialize(file_get_contents_clicky($url));
 				set_transient( $serial, $result, get_option('ca_cachetime') );
 				//echo "QR4-Refresh";
 			}else{
@@ -196,7 +196,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			if ( empty( $transient ) ){
 				$url = $api_url."site_id=".$siteid."&sitekey=".$sitekey."&".$from."&".$metric."&limit=30&output=php";
 				//echo $url;
-				$result = unserialize(file_get_contents($url));
+				$result = unserialize(file_get_contents_clicky($url));
 				set_transient( $serial, $result, get_option('ca_cachetime') );
 				//echo "QR4-Refresh";
 			}else{

@@ -3,8 +3,8 @@ Contributors: deconf
 Donate link: http://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
-Tested up to: 3.8.1
-Stable tag: 1.3.5
+Tested up to: 3.9.1
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,7 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 2. Clicky Analytics Top Pages, Top Referrers and Top Searches
 3. Clicky Analytics Settings
 4. Clicky Analytics statistics per page on Frontend
+5. Clicky Analytics Dashboard
 
 == License ==
 
@@ -79,43 +80,54 @@ This plugin it's released under the GPLv2, you can use it free of charge on your
 
 == Changelog ==
 
-= 04.02.2014 - v1.3.5 =
+=v1.4=
+- data validation and sanitization
+- switching from cURL to wp_remote_get
+- additional dedicated dashboard for Clicky stats
+- css tweaks 
+- code optimizations
+- display stats in frontend even if there are no organic searches
+- added install/uninstall functions
+- updated translations
+- default options update
+
+=v1.3.5=
 - all clicky analytics requests are now made using cURL 
 
-= 23.11.2013 - v1.3.4 =
+=v1.3.4=
 - hidding error messages on frontend 
 
-= 11.11.2013 - v1.3.3 =
+=v1.3.3=
 - updates on clicky tracking code and some action hooks
 
-= 10.11.2013 - v1.3.2 =
+=v1.3.2=
 - notices and warnings fixes
 - less error prone 
 
-= 06.11.2013 - v1.3.1 =
+=v1.3.1=
 - minor fixes and updates
 
-= 05.09.2013 - v1.3 =
+=v1.3=
 - added additional error messages
 - fixed some minor issues
 
-= 14.08.2013 - v1.2.1 =
+=v1.2.1=
 - fixed article view crash when no stats are available
 
-= 01.08.2013 - v1.2 =
+=v1.2=
 - switched to cURL, to increase compatibility with some webhostings
 - removed trailing commas on charts, for IE8 compatibility
 
-= 07.07.2013 - v1.1.1 =
+=v1.1.1=
 - table title fix for top pages
 - language file updated
 
-= 20.05.2013 - v1.1 =
+=v1.1=
 
 * switch to internal jQuery library
 * added video actions tracking for Youtube
 * added video actions tracking for HTML5
 
-= 15.05.2013 - v1.0 =
+=v1.0=
 
 * first release

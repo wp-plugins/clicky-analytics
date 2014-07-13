@@ -1,14 +1,24 @@
 <?php
-
+/**
+ * Author: Alin Marcu
+ * Author URI: http://deconf.com
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
 	function file_get_contents_clicky($url) {
-		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_URL, $url);
-
-		$data = curl_exec($ch);
-		curl_close($ch);
+		$args = array(
+				'timeout'     => 15,
+				'redirection' => 1,
+				'httpversion' => '1.0',
+				'user-agent'  => 'Clicky Analytics (+http://deconf.com/clicky-analytics-dashboard-wordpress/)'
+		);
+		$result = wp_remote_get( $url );
+		if ( is_array($result) AND 200 == $result['response']['code'] ) {
+			$data = $result['body'];
+		} else{
+			$data = '';
+		}		
 
 		return $data;
 	}
@@ -66,8 +76,13 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 		}
 		if (get_option('ca_track_html5')){
 			$video_tracking.='<script src="//static.getclicky.com/inc/javascript/video/html.js"></script>';
-		}		
-		$tracking=$custom_tracking.$main_tracking.$video_tracking;	
+		}
+
+		$tracking = "\n<!-- BEGIN Clicky Analytics v".CADASH_CURRENT_VERSION." Tracking - http://deconf.com/clicky-analytics-dashboard-wordpress/ -->\n";
+		
+		$tracking .= $custom_tracking.$main_tracking.$video_tracking;	
+		
+		$tracking .= "\n<!-- END Clicky Analytics v".CADASH_CURRENT_VERSION." Tracking - http://deconf.com/clicky-analytics-dashboard-wordpress/ -->\n";
 		
 		return $tracking;	
 
@@ -75,7 +90,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 	
 	function ca_validation($item){
 	
-		return str_replace(array("'",'"'),'',$item);
+		return addslashes ($item);
 	
 	}
 	
@@ -111,7 +126,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			}	
 		}  
 			catch(exception $e) {
-			return "<br />ERROR LOG:<br /><br />".$e; 
+			return "<p>" . __ ( "ERROR LOG:", 'clicky-analytics' ) . "</p><p>" . $e . "</p>";
 		}
 		$i=0;
 		foreach( $result as $item ) {
@@ -136,7 +151,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 
 		}
-		return rtrim($ca_statsdata,',');
+		return wp_kses(rtrim($ca_statsdata,','), GADASH_ALLOW);
 	}
 	
 // Get Top referrers
@@ -158,7 +173,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			}	
 		}  
 			catch(exception $e) {
-			return "<br />ERROR LOG:<br /><br />".$e; 
+			return "<p>" . __ ( "ERROR LOG:", 'clicky-analytics' ) . "</p><p>" . $e . "</p>";
 		}
 		$i=0;
 		foreach( $result as $item ) {
@@ -184,7 +199,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 
 		}
 
-		return rtrim($ca_statsdata,',');		
+		return wp_kses(rtrim($ca_statsdata,','), GADASH_ALLOW);
 	}
 // Get Top searches
 	function ca_top_searches($api_url, $siteid, $sitekey, $from){
@@ -205,7 +220,7 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 			}	
 		}  
 			catch(exception $e) {
-			return "<br />ERROR LOG:<br /><br />".$e; 
+			return "<p>" . __ ( "ERROR LOG:", 'clicky-analytics' ) . "</p><p>" . $e . "</p>";
 		}
 		$i=0;
 		foreach( $result as $item ) {
@@ -230,6 +245,6 @@ clicky_site_ids.push(".get_option('ca_siteid').");
 				$ca_statsdata.="['".$goores[$j][0]."',".$goores[$j][1]."],";
 			}
 		}
-		return rtrim($ca_statsdata,',');
+		return wp_kses(rtrim($ca_statsdata,','), GADASH_ALLOW);
 	}
 ?>

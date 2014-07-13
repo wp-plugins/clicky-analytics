@@ -75,15 +75,11 @@ table.clickytable {
 	text-decoration:none;
 	text-shadow:1px 1px 0px #EA8459;
 }
-
-.note{
-	border:2px solid #a1a1a1;
-	padding:10px 20px; 
-	background:white;
-	border-radius:25px;
-	width:25%;
+.cadash-title{
+    float:left;
+    margin-right:10px;
+    margin-top:2px;
 }
-
-.note li{
-	line-height:1.5em;
+.cadash-desc{
+	font-size:1em;
 }

@@ -15,9 +15,9 @@ Using a widget, [Clicky Analytics Plugin](http://deconf.com/clicky-analytics-das
 
 This plugin automatically inserts <a href="http://clicky.com/66508224" target="_blank">Clicky Web Analytics</a> tracking code in each page of your website.
 
-Authorized users can also view statistics like Visitors and Top Searches, on frontend, at the end of each article.
+Authorized users can also view Clicky statistics like visitors and yop searches, on frontend, at the end of each article.
 
-Dashboard features:
+Clicky Admin Dashboard features:
 
 - you can access your website's basic statistics in a widget on your Admin Dashboard
 - cache feature, this improves loading speeds
@@ -26,7 +26,7 @@ Dashboard features:
 - option to display Clicky Analytics statistics on frontend, at the end of each article
 - has multilingual support, a POT file is available for translations.
 
-Tracking features:
+Clicky Tracking features:
 
 - enable/disable Clicky Web Analytics tracking code
 - usernames tracking feature
@@ -34,6 +34,11 @@ Tracking features:
 - video actions tracking for Youtube
 - video actions tracking for HTML5
 - asynchronously load of Clicky Web Analytics tracking code
+
+Clicky Custom Dashboard
+
+- today's traffic overview, links, content and searches
+- visitors overview for predifined ranges or a custom date range 
 
 Some features like video analytics and custom data tracking will require a <a href="http://clicky.com/66508224" target="_blank">Clicky Analytics Pro</a> account.
  

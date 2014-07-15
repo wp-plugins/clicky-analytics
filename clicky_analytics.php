@@ -4,7 +4,7 @@
  * Plugin URI: http://deconf.com 
  * Description: Displays Clicky Analytics Reports in your Dashboard. Automatically inserts the tracking code in every page of your website. 
  * Author: Alin Marcu 
- * Version: 1.4 
+ * Version: 1.4.1 
  * Author URI: http://deconf.com
  */
 define ( 'CADASH_CURRENT_VERSION', '1.4' );
@@ -40,7 +40,7 @@ add_filter ( "plugin_action_links_$plugin", 'ca_dash_settings_link' );
 // Admin Styles
 add_action ( 'admin_enqueue_scripts', 'ca_dash_admin_enqueue_styles' );
 function ca_dashboard_menu() {
-	add_dashboard_page ( __ ( 'Clicky Analytics', 'clicky-analytics' ), __ ( 'Clicky Analytics', 'clicky' ), 'manage_options', 'clicky_analytics', 'ca_dashboard_page' );
+	add_dashboard_page ( __ ( 'Clicky Analytics', 'clicky-analytics' ), __ ( 'Clicky Analytics', 'clicky' ), get_option('ca_access'), 'clicky_analytics', 'ca_dashboard_page' );
 }
 function ca_dashboard_page() {
 	$siteid = get_option ( 'ca_siteid' );
@@ -48,15 +48,8 @@ function ca_dashboard_page() {
 	?>
 <br />
 <iframe id="clicky-analytics"
-	style="margin-left: 20px; width: 95%; height: 1250px;" scrolling="no"
-	src="https://clicky.com/stats/wp-iframe?site_id=<?php echo esc_attr($siteid); ?>&amp;sitekey=<?php echo esc_attr($sitekey); ?>"></iframe>
-
-<script>
-$('#clicky-analytics').load(function () {
-    $(this).height($(this).contents().height());
-    $(this).width($(this).contents().width());
-});
-</script>
+	style="margin-left: 20px; width: 100%; height: 1000px;" 
+	src="https://clicky.com/?site_id=<?php echo esc_attr($siteid); ?>&amp;sitekey=<?php echo esc_attr($sitekey); ?>"></iframe>
 <?php
 }
 function ca_dash_admin_enqueue_styles($hook) {

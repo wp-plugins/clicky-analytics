@@ -4,7 +4,7 @@ Donate link: http://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,8 +37,8 @@ Clicky Tracking features:
 
 Clicky Custom Dashboard
 
-- today's traffic overview, links, content and searches
-- visitors overview for predifined ranges or a custom date range 
+- all clicky stats are available in a custom dashboard, under your blog's administration panel.
+
 
 Some features like video analytics and custom data tracking will require a <a href="http://clicky.com/66508224" target="_blank">Clicky Analytics Pro</a> account.
  
@@ -84,6 +84,10 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
 
 == Changelog ==
+
+= v1.4.1 =
+- allow specified access level to view the custom dashboard
+- custom dashboard is now able to display all clicky stats
 
 = v1.4 =
 - data validation and sanitization

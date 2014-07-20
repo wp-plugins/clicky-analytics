@@ -4,7 +4,7 @@ Donate link: http://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,11 @@ A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins 
 This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
 
 == Changelog ==
+
+= v1.4.2 =
+- bugfix: notices and warnings in main dashboard
+- language file updates
+- hardening security
 
 = v1.4.1 =
 - allow specified access level to view the custom dashboard

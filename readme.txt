@@ -3,7 +3,7 @@ Contributors: deconf
 Donate link: https://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

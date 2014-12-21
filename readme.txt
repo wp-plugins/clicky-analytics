@@ -4,7 +4,7 @@ Donate link: https://deconf.com/donate/
 Tags: clicky,analytics,dashboard,tracking,tracking code,statistics,clicky analytics,clicky code,wpmu,multisite
 Requires at least: 2.8
 Tested up to: 4.1
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,11 +15,11 @@ Using a widget, [Clicky Analytics Plugin](https://deconf.com/clicky-analytics-da
 
 This plugin automatically inserts <a href="http://clicky.com/66508224" target="_blank">Clicky Web Analytics</a> tracking code in each page of your website.
 
-Authorized users can also view Clicky statistics like visitors and yop searches, on frontend, at the end of each article.
+Authorized users can also view Clicky statistics like visitors and top searches, on frontend, at the end of each article.
 
 Clicky Admin Dashboard features:
 
-- you can access your website's basic statistics in a widget on your Admin Dashboard
+- you can access your website's basic statistics in a widget on your Administration Dashboard
 - cache feature, this improves loading speeds
 - access level settings
 - option to display top 30 pages, referrers and searches (sortable by columns)
@@ -29,7 +29,7 @@ Clicky Admin Dashboard features:
 Clicky Tracking features:
 
 - enable/disable Clicky Web Analytics tracking code
-- usernames tracking feature
+- user names tracking feature
 - e-mails tracking feature
 - video actions tracking for Youtube
 - video actions tracking for HTML5
@@ -85,11 +85,15 @@ This plugin it's released under the GPLv2, you can use it free of charge on your
 
 == Changelog ==
 
+= v1.4.4 =
+- Bug Fix: updated error text
+- Bug Fix: plugin options cleared during deactivation/activation 
+- Enhancement: adding noscript tracking capability
+
 = v1.4.3 =
-- bugfix: display mixed content when using https
-- bugfix: some frontend stats were not generated properly
-- bugfix: custom dashboard fix
-- tweak: all api requests are made using https
+- Bug Fix: display mixed content when using https
+- Bug Fix: some frontend stats were not generated properly
+- Bug Fix: custom dashboard fix
 
 = v1.4.2 =
 - bugfix: notices and warnings in main dashboard
